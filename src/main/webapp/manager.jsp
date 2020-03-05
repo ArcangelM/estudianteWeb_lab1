@@ -50,7 +50,7 @@
         <ul class="navbar-nav ml-auto">
           
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="login.jsp">Logout</a>
+            <a class="btn btn-outline-danger" href="login.jsp">Logout</a>
           </li>
           
         </ul>
@@ -87,8 +87,9 @@
   </header>
       <section>
           <!--<div btn-group btn-group-justified>-->
-          <button class="login100-form-btn"  name="action" value="matricular">Matricular</button>
-          <button class="login100-form-btn"   name="action" value="mostrar">Mostrar Matriculas</button>
+          <div>
+              <br>
+          </div>
           
       <!--</div>-->
       </section>
@@ -97,23 +98,33 @@
       <!-- Button trigger modal -->
       <!--<form action="MostrarMateriaServlet?action=mostrar" method="post">-->
       <!--data-toggle="modal" data-target="#exampleModalCenter"-->
-      <button type="button" class="btn btn-primary" id="btn_modal" data-toggle="modal" data-target="#exampleModalCenter" >
-  Launch demo modal
+      <button type="button" class="btn btn-success" id="btn_modal" data-toggle="modal" data-target="#exampleModalCenter" >
+  MATRICULAR CURSO
 </button>
+      
+<button type="button" class="btn btn-warning" id="btn_modal" data-toggle="modal" data-target="#exampleModalCenter" >
+    ESTADO CURSOS
+</button>
+      
+<div>
+    <br>
+</div>
       <!--     name="action" value="mostrar"  </form>
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="" role="document">
+  <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">MATRICULA TUS CURSOS</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">MATRICULAR CURSOS</h5>
         <br>
-        <h2 id="exampleModalLongTitle">Asecurese de verificar los curos a inscrribir antes de enviar la matricula!</h2>
+        
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+        <h6>Asegurese de verificar los cursos a inscrribir antes de enviar la matricula!</h6>
       <div class="modal-body" id="modal_body">
+          
         <!--cuerpo de la tabla en el modal-->
         
         

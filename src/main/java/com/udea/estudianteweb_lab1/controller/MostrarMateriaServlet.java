@@ -131,7 +131,7 @@ out.println("                        <tr>\n" +
                 List<Materia> materias= materiaFacade.findAll();
                // request.getSession().setAttribute("materias", findAll);
                // url = "manager.jsp";
-                
+               
                out.println(" <table class=\"table table-bordered\"  id=\"tablaDatos\">\n" +
 "                    <thead>\n" +
 "                        <tr>\n" +
