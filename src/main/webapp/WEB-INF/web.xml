@@ -4,9 +4,17 @@
         <servlet-name>AccountestServlet</servlet-name>
         <servlet-class>com.udea.estudianteweb_lab1.controller.AccountestServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MostrarMateriaServlet</servlet-name>
+        <servlet-class>com.udea.estudianteweb_lab1.controller.MostrarMateriaServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountestServlet</servlet-name>
         <url-pattern>/AccountestServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MostrarMateriaServlet</servlet-name>
+        <url-pattern>/MostrarMateriaServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

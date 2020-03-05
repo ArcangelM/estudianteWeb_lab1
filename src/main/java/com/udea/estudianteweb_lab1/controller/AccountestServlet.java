@@ -94,6 +94,7 @@ public class AccountestServlet extends HttpServlet {
                     foto=new byte[fotoSize];
                     try(DataInputStream dis=new DataInputStream(fotoPart.getInputStream())){
                         dis.readFully(foto);
+                        
                          System.out.print("****ENTRO EN EL TRY ****");
                     }
                 }
@@ -101,6 +102,7 @@ public class AccountestServlet extends HttpServlet {
                 
                     a.setFoto(foto);
                     System.out.print("si hay foto");
+                    
                 }
                
                

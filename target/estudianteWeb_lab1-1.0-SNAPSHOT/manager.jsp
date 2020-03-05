@@ -4,6 +4,9 @@
     Author     : arK
 --%>
 
+<%@page import="com.udea.estudianteweb_lab1.modelo.Materia"%>
+<%@page import="java.util.List"%>
+<%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html >
@@ -26,6 +29,9 @@
   <link href="css/freelancer.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/main.css">
 
+ 
+  
+  
 </head>
 
 <body id="page-top">
@@ -77,14 +83,54 @@
       <p class="masthead-subheading font-weight-light mb-0">DOCUMENTO: ${estudiante.documento}</p>
       <p class="masthead-subheading font-weight-light mb-0">CARRERA: ${estudiante.carrera}</p>
       
-      <div btn-group btn-group-justified>
-          <button class="login100-form-btn"  name="action" value="Login">Matricular</button>
-          <button class="login100-form-btn"  name="action" value="Login">Mostrar Matriculas</button>
-          
-      </div>
     </div>
   </header>
+      <section>
+          <!--<div btn-group btn-group-justified>-->
+          <button class="login100-form-btn"  name="action" value="matricular">Matricular</button>
+          <button class="login100-form-btn"   name="action" value="mostrar">Mostrar Matriculas</button>
+          
+      <!--</div>-->
+      </section>
+     
+      <!---prueba modal--->
+      <!-- Button trigger modal -->
+      <!--<form action="MostrarMateriaServlet?action=mostrar" method="post">-->
+      <!--data-toggle="modal" data-target="#exampleModalCenter"-->
+      <button type="button" class="btn btn-primary" id="btn_modal" data-toggle="modal" data-target="#exampleModalCenter" >
+  Launch demo modal
+</button>
+      <!--     name="action" value="mostrar"  </form>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">MATRICULA TUS CURSOS</h5>
+        <br>
+        <h2 id="exampleModalLongTitle">Asecurese de verificar los curos a inscrribir antes de enviar la matricula!</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="modal_body">
+        <!--cuerpo de la tabla en el modal-->
+        
+        
+        
+        <!--fin tabla -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
+
+
+   
   <!-- Footer -->
   <footer class="footer text-center">
     <div class="container">
@@ -142,6 +188,22 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/freelancer.min.js"></script>
+  
+   <script>
+	$(document).ready(function() {
+		$('#btn_modal').click(function(event) {
+			var action ='mostrar';
+			
+			// Si en vez de por post lo queremos hacer por get, cambiamos el $.post por $.get
+			$.post('MostrarMateriaServlet', {
+				action : action
+				
+			}, function(responseText) {
+				$('#modal_body').html(responseText);
+			});
+		});
+	});
+</script>
 
 </body>
 
