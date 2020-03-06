@@ -200,22 +200,11 @@
   <!-- Custom scripts for this template -->
   <script src="js/freelancer.min.js"></script>
   
-   <script>
-	$(document).ready(function() {
-		$('#btn_modal').click(function(event) {
-			var action ='mostrar';
-			
-			// Si en vez de por post lo queremos hacer por get, cambiamos el $.post por $.get
-			$.post('MostrarMateriaServlet', {
-				action : action
-				
-			}, function(responseText) {
-				$('#modal_body').html(responseText);
-			});
-		});
-	});
-</script>
-
+ <script src="vendor/jquery/eventos.js"></script>
+ <script>
+     id= ${estudiante.documento}
+    </script>
+ 
 </body>
 
 </html>

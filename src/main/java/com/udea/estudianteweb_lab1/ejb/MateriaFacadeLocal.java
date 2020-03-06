@@ -29,5 +29,7 @@ public interface MateriaFacadeLocal {
     List<Materia> findRange(int[] range);
 
     int count();
+
+    List<Materia> materiasDispoMatricu(String idEst);
     
 }

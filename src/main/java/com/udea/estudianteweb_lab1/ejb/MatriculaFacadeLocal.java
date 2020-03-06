@@ -29,5 +29,9 @@ public interface MatriculaFacadeLocal {
     List<Matricula> findRange(int[] range);
 
     int count();
+
+    List<Matricula> matriculasEstu(int idEst);
+
+    boolean updateMatricula(int idMatri,String estado);
     
 }

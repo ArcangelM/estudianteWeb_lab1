@@ -6,9 +6,11 @@
 package com.udea.estudianteweb_lab1.ejb;
 
 import com.udea.estudianteweb_lab1.modelo.Materia;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -27,6 +29,16 @@ public class MateriaFacade extends AbstractFacade<Materia> implements MateriaFac
 
     public MateriaFacade() {
         super(Materia.class);
+    }
+
+    @Override
+    public List<Materia> materiasDispoMatricu(String idEst) {
+       Query q = em.createQuery("select c from Materia c,Matricula m "+
+                "where m.id_estudiante=:idEst "+" and NOT (m.estadoMa=:'aprobada')");
+        q.setParameter("idEst", idEst);
+        
+        
+        return q.getResultList();
     }
     
 }
