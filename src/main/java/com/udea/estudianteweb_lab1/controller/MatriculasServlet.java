@@ -8,6 +8,7 @@ package com.udea.estudianteweb_lab1.controller;
 import com.udea.estudianteweb_lab1.ejb.AccountestFacadeLocal;
 import com.udea.estudianteweb_lab1.ejb.MateriaFacadeLocal;
 import com.udea.estudianteweb_lab1.ejb.MatriculaFacadeLocal;
+import com.udea.estudianteweb_lab1.modelo.Accountest;
 import com.udea.estudianteweb_lab1.modelo.Materia;
 import com.udea.estudianteweb_lab1.modelo.Matricula;
 import java.io.IOException;
@@ -104,19 +105,23 @@ public class MatriculasServlet extends HttpServlet {
                 matriculaFacade.remove(matriculaFacade.find(Integer.parseInt(codMatri)));
                
             }else if("add-matricula".equals(action)){
-               String codMater = request.getParameter("codMater");
+               
+                String codMater = request.getParameter("codMater");
+                Accountest est = new Accountest(); 
+                Materia mater = new Materia();
+                est =accountestFacade.find("1234@gmail.com");
+                mater = materiaFacade.find(Integer.parseInt(codMater));
                 Matricula matricula = new Matricula();
-                matricula.setIdEstudiante(accountestFacade.find(id));
+                
+                matricula.setIdEstudiante(est);
                 matricula.setEstadoMa("matriculada");
                 matricula.setPerAcademico("2019-02");
-                matricula.setIdMateria(materiaFacade.find(Integer.parseInt(codMater)));
+                matricula.setIdMateria(mater);
                 matriculaFacade.create(matricula);
             }
                 
                
-                //MATRICULAS DE UN ESTUDIANTE CON DOCUMENTO ID
-                
-                List<Matricula>matriculas= matriculaFacade.matriculasEstu(Integer.parseInt(id));
+             List<Matricula>matriculas= matriculaFacade.matriculasEstu(Integer.parseInt(id));
                        
                 //MATERIAS EXTRAIDA DESDE LA TABLA MATERIAS
                 List<Materia> materias= materiaFacade.findAll();
@@ -196,14 +201,17 @@ out.println("                        <tr>\n" +
 "                            <td class=\"text-center\">"+materia.getCodPrerrequisito()+"</td>\n" +
 "                            <td class=\"text-center\">"+estadosMa.get(""+materia.getCodigo())+"</td>\n" +
 "                            <td class=\"text-center\">\n" +
-"                                \n" +
-"                                <!-- <input type=\"hidden\" value=\"<//%= rs.getInt(\"Id_Usuario\")%>\" id=\"Editar\"/>\n" +
-"                                <input type=\"submit\" class=\"btn btn-warning\" data-toggle=\"modal\" data-target=\"#myModal1\" value=\"Editar\"/>  -->\n" +
-"                                <button type=\"button\" value=\""+materiaMatricu.get(""+materia.getCodigo())+"\" id=\"add-link\" class=\"btn btn-primary\">Añadir</a>\n" +
-"                                <button value=\""+materiaMatricu.get(""+materia.getCodigo())+"\" id=\"quitar-link\" class=\"btn btn-danger\">Quitar</a>\n" +
-"                            </td>\n" +
+"                                \n" );
+                         if (estadosMa.get(""+materia.getCodigo()).equals("matriculada")){
+out.println("<button typen=\"button\" valor=\""+materiaMatricu.get(""+materia.getCodigo())+"\" id=\"quitar-matricula\" onclick=\"quitarMatri("+materiaMatricu.get(""+materia.getCodigo())+")\" class=\"btn btn-danger\">Quitar</button>\n");
+                         }
+                         else{
+out.println("                    <button type=\"button\"  valor=\""+materia.getCodigo()+"\" id=\"add-matricula\" onclick=\"enviarMatri("+materia.getCodigo()+")\" class=\"btn btn-primary\">Añadir</button>\n");
+                         }
+out.println("                            </td>\n" +
 "                        </tr>\n");
-                        }
+                        
+        }
                                 out.println("\n" +
 "                </table>");
             

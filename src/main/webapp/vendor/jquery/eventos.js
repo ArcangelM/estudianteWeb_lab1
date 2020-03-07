@@ -25,40 +25,23 @@ $(document).ready(function() {
 		});
 	});
         
-$(document).ready(function() {
-		$('#add-matricula').click(function(event) {
-                    console.log("entrando en add-matricula");
-			var action ='add-matricula';
-			var codMater = $(this).attr('valor');
-			// Si en vez de por post lo queremos hacer por get, cambiamos el $.post por $.get
-			$.post('MatriculasServlet', {
-				action : action,
-				codMatri : codMater,
-                                idEstu : id
-			}, function(responseText) {
-				$('#modal_body').html(responseText);
-			});
-		});
-	});
-$(document).ready(function() {
-		$('#quitar-matricula').click(function(event) {
-			var action ='quitar-matricula';
-			var codMatri = $(this).attr('valor')
-			// Si en vez de por post lo queremos hacer por get, cambiamos el $.post por $.get
-			$.post('MatriculasServlet', {
-				action : action,
-				codMatri :codMatri,
-                                idEstu : id
-			}, function(responseText) {
-				$('#modal_body').html(responseText);
-			});
-		});
-	});
-        
- function enviarMatri(){
+ function enviarMatri(m){
     
             var action ='add-matricula';
-            var codMatri = $(this).attr('valor');
+            var codMater = m;
+            // Si en vez de por post lo queremos hacer por get, cambiamos el $.post por $.get
+            $.post('MatriculasServlet', {
+                    action : action,
+                    codMater :codMater,
+                    idEstu : id
+            }, function(responseText) {
+                    $('#modal_body').html(responseText);
+            });  
+}
+ function quitarMatri(m){
+    
+            var action ='quitar-matricula';
+            var codMatri = m;
             // Si en vez de por post lo queremos hacer por get, cambiamos el $.post por $.get
             $.post('MatriculasServlet', {
                     action : action,

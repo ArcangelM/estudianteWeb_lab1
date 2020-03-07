@@ -7,7 +7,6 @@ package com.udea.estudianteweb_lab1.controller;
 
 import com.udea.estudianteweb_lab1.ejb.AccountestFacadeLocal;
 import com.udea.estudianteweb_lab1.modelo.Accountest;
-import static com.udea.estudianteweb_lab1.modelo.Accountest_.email;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.PrintWriter;

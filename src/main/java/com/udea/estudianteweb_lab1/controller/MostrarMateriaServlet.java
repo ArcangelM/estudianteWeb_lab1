@@ -217,10 +217,10 @@ out.println("                        <tr>\n" +
 "                            <td class=\"text-center\">\n" +
 "                                \n" );
                          if (estadosMa.get(""+materia.getCodigo()).equals("matriculada")){
-out.println("<button typen=\"button\" valor=\""+materiaMatricu.get(""+materia.getCodigo())+"\" id=\"quitar-matricula\" class=\"btn btn-danger\">Quitar</button>\n");
+out.println("<button typen=\"button\" valor=\""+materiaMatricu.get(""+materia.getCodigo())+"\" id=\"quitar-matricula\" onclick=\"quitarMatri("+materiaMatricu.get(""+materia.getCodigo())+")\" class=\"btn btn-danger\">Quitar</button>\n");
                          }
                          else{
-out.println("                    <button type=\"button\"  valor=\""+materia.getCodigo()+"\" id=\"add-matricula\" onclick=\"enviarMatri()\" class=\"btn btn-primary\">Añadir</button>\n");
+out.println("                    <button type=\"button\"  valor=\""+materia.getCodigo()+"\" id=\"add-matricula\" onclick=\"enviarMatri("+materia.getCodigo()+")\" class=\"btn btn-primary\">Añadir</button>\n");
                          }
 out.println("                            </td>\n" +
 "                        </tr>\n");

@@ -40,14 +40,16 @@ public class AccountestFacade extends AbstractFacade<Accountest> implements Acco
         
         return q.getResultList().size()>0;
     }
-    
-    public List<String> traerStudent(String u, String p) {
+
+    @Override
+    public List<Accountest> buscarEstu(int documento) {
         Query q = em.createQuery("select a from Accountest a "+
-                "where a.email=:u and a.password=:p");
-        q.setParameter("u", u);
-        q.setParameter("p", p);
+                "where a.documento = documento");
+        q.setParameter("documento", documento);
         
         return q.getResultList();
     }
+    
+    
     
 }

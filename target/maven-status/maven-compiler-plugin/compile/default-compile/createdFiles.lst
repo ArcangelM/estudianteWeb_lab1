@@ -1,6 +1,7 @@
 com\udea\estudianteweb_lab1\ejb\AccountestFacadeLocal.class
 com\udea\estudianteweb_lab1\ejb\MateriaFacadeLocal.class
 com\udea\estudianteweb_lab1\modelo\Materia_.class
+com\udea\estudianteweb_lab1\controller\MatriculasServlet.class
 com\udea\estudianteweb_lab1\modelo\Materia.class
 com\udea\estudianteweb_lab1\controller\MostrarMateriaServlet.class
 com\udea\estudianteweb_lab1\modelo\Matricula_.class
@@ -8,7 +9,6 @@ com\udea\estudianteweb_lab1\ejb\MatriculaFacade.class
 com\udea\estudianteweb_lab1\ejb\MateriaFacade.class
 com\udea\estudianteweb_lab1\modelo\Accountest.class
 com\udea\estudianteweb_lab1\ejb\AccountestFacade.class
-com\udea\estudianteweb_lab1\controller\MostrarFotoServlet.class
 com\udea\estudianteweb_lab1\modelo\Accountest_.class
 com\udea\estudianteweb_lab1\controller\AccountestServlet.class
 com\udea\estudianteweb_lab1\ejb\MatriculaFacadeLocal.class

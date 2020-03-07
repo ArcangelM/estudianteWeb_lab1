@@ -31,5 +31,7 @@ public interface AccountestFacadeLocal {
     int count();
 
     boolean checkLogin(String u, String p);
+
+    List<Accountest> buscarEstu(int documento);
     
 }
